@@ -370,6 +370,41 @@
       line-height: 1.9;
     }
 
+    /* Brands section */
+    .brand-card{
+      padding: 22px;
+    }
+
+    .brand-logo-wrap{
+      width: 220px;
+      max-width: 100%;
+      background: #fff;              /* makes JPG white background blend nicely */
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,.06);
+      padding: 14px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 24px rgba(0,0,0,.06);
+    }
+
+    .brand-logo{
+      width: 100%;
+      max-height: 90px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 8px 14px rgba(0,0,0,.12));
+    }
+
+    .brand-info h5{
+      font-weight: 900;
+    }
+
+    /* Ensure spacing looks good on mobile */
+    @media (max-width: 575.98px){
+      .brand-logo-wrap{ width: 100%; }
+      .brand-logo{ max-height: 80px; }
+    }
+
     /* CTA band */
     .cta-card{
       background: rgba(255,255,255,.10);
@@ -480,7 +515,7 @@
       <a class="navbar-brand" href="#top">
         <span class="brand-badge" title="Logo">
           <!-- LOGO 1: ضع لوجو الشركة -->
-          <img src="assets/logo-company.png" alt="Logo">
+          <img src="assets/company-logo.png" alt="Logo">
         </span>
         <span class="d-none d-sm-inline">شركة أبناء صلاح عاشور</span>
       </a>
@@ -579,6 +614,42 @@
             <div class="icon-bubble"><i class="bi bi-people"></i></div>
             <h5>شراكات طويلة</h5>
             <p>نبني علاقات مستمرة مع التجار والشركاء عبر خدمة احترافية ودعم دائم.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section id="brands">
+    <div class="container">
+      <div class="text-center reveal">
+        <h2 class="section-title">العلامات التجارية التابعة</h2>
+        <p class="section-sub mx-auto">
+          نفخر بأن لدينا علامة تجارية تعمل ضمن منظومة الشركة لتقديم منتجات المواد الغذائية والتموينيات.
+        </p>
+      </div>
+
+      <div class="row justify-content-center g-4 mt-2">
+        <div class="col-lg-8 reveal">
+          <div class="brand-card card-soft d-flex flex-column flex-md-row align-items-center gap-3">
+            
+            <div class="brand-logo-wrap">
+              <img class="brand-logo" src="assets/maris-logo.png" alt="Maris Foods Logo">
+            </div>
+
+            <div class="brand-info text-center text-md-start">
+              <h5 class="mb-1">Maris Foods</h5>
+              <p class="mb-2">
+                علامة تجارية تابعة لشركة أبناء صلاح عاشور للنقل والاستثمار، متخصصة في المواد الغذائية والتموينيات الأساسية.
+              </p>
+              <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
+                <span class="badge text-bg-light border px-3 py-2">مواد غذائية</span>
+                <span class="badge text-bg-light border px-3 py-2">تموينيات</span>
+                <span class="badge text-bg-light border px-3 py-2">توريد للتجار</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
