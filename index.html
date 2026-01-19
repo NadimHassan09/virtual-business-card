@@ -76,6 +76,21 @@
       letter-spacing: .2px;
       display:flex; align-items:center; gap:.6rem;
     }
+    .navbar-brand.brand-logo-only{
+      padding: 0;
+      margin: 0;
+      gap: 0;
+      margin-left: 1.5rem; /* gap between logo and navbar links */
+    }
+
+    .navbar-logo{
+      height: 70px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+    }
+
     .brand-badge{
       width: 42px; height: 42px;
       border-radius: 14px;
@@ -86,6 +101,9 @@
       overflow:hidden;
     }
     .brand-badge img{ width:100%; height:100%; object-fit: cover; }
+    .navbar-nav{
+      gap: 1rem; /* gap between each nav link */
+    }
     .nav-link{ font-weight: 600; color: var(--text-2) !important; }
     .nav-link:hover{ color: var(--link-hover) !important; }
     .btn-cta{
@@ -465,6 +483,8 @@
 
     /* Responsive tweaks */
     @media (max-width: 991.98px){
+      .navbar-brand.brand-logo-only{ margin-left: 0; } /* remove gap on mobile */
+      .navbar-logo{ height: 60px; }
       .hero-wrap{ padding: 60px 0; }
       .hero-content{ 
         flex-direction: column;
@@ -512,12 +532,8 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#top">
-        <span class="brand-badge" title="Logo">
-          <!-- LOGO 1: ضع لوجو الشركة -->
-          <img src="assets/company-logo.png" alt="Logo">
-        </span>
-        <span class="d-none d-sm-inline">شركة أبناء صلاح عاشور</span>
+      <a class="navbar-brand brand-logo-only" href="#top" aria-label="شركة أبناء صلاح عاشور">
+        <img class="navbar-logo" src="assets/company-logo.png" alt="شركة أبناء صلاح عاشور">
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
