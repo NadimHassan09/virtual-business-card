@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>شركة أبناء صلاح عاشور للنقل والإستثمار</title>
+  <meta name="description" content="شركة فلسطينية متخصصة في خدمات النقل التجاري والاستثمار في المواد التموينية الأساسية داخل الضفة الغربية." />
+
+  <!-- Bootstrap 5 (RTL) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root{
+      --navy:#0b1b33;
+      --blue:#123a78;
+      --blue-2:#0f2f63;
+      --green:#1bbf72;
+      --text:#0d1526;
+      --muted:#6b778d;
+      --card:#ffffff;
+      --bg:#f6f8fc;
+      --ring: rgba(27,191,114,.25);
+      --shadow: 0 18px 50px rgba(7, 18, 45, .12);
+      --shadow-soft: 0 10px 30px rgba(7, 18, 45, .10);
+      --radius: 20px;
+    }
+
+    *{ font-family: "Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    body{ background: var(--bg); color: var(--text); }
+
+    /* Top mini bar */
+    .topbar{
+      background: var(--navy);
+      color: rgba(255,255,255,.9);
+      font-size: .9rem;
+    }
+    .topbar a{ color: rgba(255,255,255,.92); text-decoration: none; }
+    .topbar .sep{ opacity:.35; margin: 0 .5rem; }
+
+    /* Navbar */
+    .navbar{
+      background: rgba(255,255,255,.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(10, 30, 70, .08);
+    }
+    .navbar-brand{
+      font-weight: 800;
+      letter-spacing: .2px;
+      display:flex; align-items:center; gap:.6rem;
+    }
+    .brand-badge{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      box-shadow: var(--shadow-soft);
+      display:grid; place-items:center;
+      color:#fff;
+      overflow:hidden;
+    }
+    .brand-badge img{ width:100%; height:100%; object-fit: cover; }
+    .nav-link{ font-weight: 600; color: #1b2b4a !important; }
+    .nav-link:hover{ color: var(--blue) !important; }
+    .btn-cta{
+      background: var(--green);
+      border: none;
+      font-weight: 800;
+      padding: .65rem 1rem;
+      border-radius: 999px;
+      box-shadow: 0 12px 24px var(--ring);
+    }
+    .btn-cta:hover{ filter: brightness(.96); transform: translateY(-1px); }
+
+    /* Section base */
+    section{ padding: 80px 0; }
+    .section-title{
+      font-weight: 900;
+      color: var(--blue-2);
+      margin-bottom: 12px;
+    }
+    .section-sub{
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 780px;
+    }
+
+    /* Hero: white attractive inside navy area (like screenshot layout) */
+    .hero-wrap{
+      background: radial-gradient(900px 380px at 15% 0%, rgba(18,58,120,.25), transparent 60%),
+                  linear-gradient(180deg, var(--navy), var(--blue-2));
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-wrap:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background-image: radial-gradient(rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 22px 22px;
+      opacity: .35;
+      pointer-events:none;
+    }
+
+    .hero-content{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .hero-title-wrapper{
+      flex: 1 1 50%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .hero-title{
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.3;
+      color: #fff;
+      margin: 0;
+      text-shadow: 0 4px 20px rgba(0,0,0,.2);
+      text-align: right;
+    }
+
+    .hero-phone-wrapper{
+      flex: 1 1 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Phone frame for QR code */
+    .phone-frame{
+      width: 280px;
+      max-width: 90%;
+      aspect-ratio: 9 / 19.5;
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+      border-radius: 36px;
+      padding: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4), 
+                  0 0 0 8px #1a1a1a,
+                  0 0 0 12px rgba(255,255,255,.1);
+      position: relative;
+    }
+
+    .phone-frame::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 24px;
+      background: #1a1a1a;
+      border-radius: 0 0 16px 16px;
+      z-index: 2;
+    }
+
+    .phone-screen{
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      border-radius: 28px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .phone-status-bar{
+      height: 32px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #000;
+      border-bottom: 1px solid rgba(0,0,0,.05);
+    }
+    .phone-status-bar span:last-child{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .phone-qr-container{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    }
+
+    .phone-qr-placeholder{
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      max-width: 200px;
+      border-radius: 16px;
+      border: 2px dashed rgba(18,58,120,.3);
+      background: linear-gradient(135deg, rgba(18,58,120,.08), rgba(27,191,114,.08));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+    }
+
+    .phone-qr-placeholder::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(18,58,120,.05) 8px, rgba(18,58,120,.05) 16px),
+        repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(18,58,120,.05) 8px, rgba(18,58,120,.05) 16px);
+      border-radius: 16px;
+    }
+
+    .phone-qr-placeholder i{
+      font-size: 48px;
+      color: rgba(18,58,120,.4);
+      z-index: 1;
+    }
+
+    .phone-qr-placeholder .qr-label{
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(18,58,120,.6);
+      z-index: 1;
+    }
+
+    .phone-home-indicator{
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background: rgba(0,0,0,.3);
+      border-radius: 2px;
+    }
+
+
+    /* Dark sections like screenshot blocks */
+    .dark-band{
+      background: radial-gradient(900px 340px at 70% -10%, rgba(27,191,114,.18), transparent 55%),
+                  linear-gradient(180deg, var(--blue-2), var(--navy));
+      color: rgba(255,255,255,.92);
+      position: relative;
+      overflow:hidden;
+    }
+    .dark-band:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background-image: radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
+      background-size: 22px 22px;
+      opacity: .30;
+      pointer-events:none;
+    }
+    .dark-band .section-title{ color:#fff; }
+    .dark-band .section-sub{ color: rgba(255,255,255,.75); }
+
+    /* Feature cards */
+    .card-soft{
+      background: rgba(255,255,255,.96);
+      border-radius: var(--radius);
+      border: 1px solid rgba(10, 30, 70, .08);
+      box-shadow: 0 12px 30px rgba(7, 18, 45, .08);
+      padding: 22px;
+      height: 100%;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card-soft:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(7, 18, 45, .12);
+    }
+    .icon-bubble{
+      width: 52px; height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(18,58,120,.14), rgba(27,191,114,.14));
+      border: 1px solid rgba(18,58,120,.12);
+      display:grid;
+      place-items:center;
+      margin-bottom: 12px;
+    }
+    .icon-bubble i{
+      font-size: 1.35rem;
+      color: var(--blue-2);
+    }
+    .card-soft h5{
+      font-weight: 900;
+      color: #10244a;
+      margin-bottom: 8px;
+    }
+    .card-soft p{
+      color: #54627a;
+      margin: 0;
+      line-height: 1.9;
+    }
+
+    /* CTA band */
+    .cta-card{
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: calc(var(--radius) + 10px);
+      padding: 26px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 16px 45px rgba(0,0,0,.18);
+    }
+    .cta-card h3{
+      font-weight: 900;
+      margin-bottom: 8px;
+      color:#fff;
+    }
+    .cta-card p{
+      color: rgba(255,255,255,.78);
+      margin: 0 0 16px;
+      line-height: 1.85;
+    }
+
+    /* Footer */
+    footer{
+      background: var(--navy);
+      color: rgba(255,255,255,.86);
+      padding: 30px 0;
+    }
+    footer a{ color: rgba(255,255,255,.9); text-decoration: none; }
+    footer a:hover{ color: #fff; text-decoration: underline; }
+
+    /* Reveal animation on scroll */
+    .reveal{
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.in{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating WhatsApp button */
+    .wa-float{
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 9999;
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 50px rgba(0,0,0,.22);
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .wa-float:hover{ transform: translateY(-2px); filter: brightness(.98); }
+    .wa-float i{ color:#fff; font-size: 1.5rem; }
+
+    /* Responsive tweaks */
+    @media (max-width: 991.98px){
+      .hero-wrap{ padding: 60px 0; }
+      .hero-content{ 
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+      }
+      .hero-title-wrapper{
+        justify-content: center;
+      }
+      .hero-title{
+        text-align: center;
+      }
+      .hero-phone-wrapper{
+        justify-content: center;
+      }
+      .phone-frame{ width: 240px; }
+      section{ padding: 64px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar py-2">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-2">
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <a href="https://www.facebook.com/share/1GN5d3y6z6/?mibextid=wwXIfr" target="_blank" rel="noopener">
+          <i class="bi bi-facebook"></i> فيسبوك
+        </a>
+        <span class="sep">|</span>
+        <a href="mailto:SonsofSalahAshour@gmail.com">
+          <i class="bi bi-envelope"></i> SonsofSalahAshour@gmail.com
+        </a>
+      </div>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <a href="https://wa.me/972598337548" target="_blank" rel="noopener">
+          <i class="bi bi-whatsapp"></i> واتساب: 972598337548+
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#top">
+        <span class="brand-badge" title="Logo">
+          <!-- LOGO 1: ضع لوجو الشركة -->
+          <img src="assets/logo-company.png" alt="Logo">
+        </span>
+        <span class="d-none d-sm-inline">شركة أبناء صلاح عاشور</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">خدماتنا</a></li>
+          <li class="nav-item"><a class="nav-link" href="#areas">مناطق العمل</a></li>
+        </ul>
+
+        <div class="d-flex gap-2">
+          <a class="btn btn-outline-primary rounded-pill fw-bold" href="https://www.facebook.com/share/1GN5d3y6z6/?mibextid=wwXIfr" target="_blank" rel="noopener">
+            فيسبوك
+          </a>
+          <a class="btn btn-cta text-white" href="https://wa.me/972598337548" target="_blank" rel="noopener">
+            <i class="bi bi-whatsapp"></i> تواصل واتساب
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero-wrap">
+    <div class="container position-relative">
+      <div class="hero-content reveal">
+        <div class="hero-title-wrapper">
+          <h1 class="hero-title">
+            شركة أبناء صلاح عاشور للنقل والاستثمار
+          </h1>
+        </div>
+
+        <div class="hero-phone-wrapper">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="phone-status-bar">
+                <span>9:41</span>
+                <span>
+                  <i class="bi bi-signal-4"></i>
+                  <i class="bi bi-wifi"></i>
+                  <i class="bi bi-battery-full"></i>
+                </span>
+              </div>
+              <div class="phone-qr-container">
+                <div class="phone-qr-placeholder">
+                  <i class="bi bi-qr-code"></i>
+                  <span class="qr-label">QR Code</span>
+                </div>
+              </div>
+              <div class="phone-home-indicator"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="text-center reveal">
+        <h2 class="section-title">من نحن</h2>
+        <p class="section-sub mx-auto">
+          شركة أبناء صلاح عاشور للنقل والاستثمار هي شركة فلسطينية متخصصة في خدمات النقل التجاري، تعمل على نقل البضائع
+          من الموانئ إلى التجار في محافظات الضفة الغربية، مع الالتزام بأعلى معايير الدقة والسرعة والمصداقية.
+          <br><br>
+          تسعى الشركة إلى بناء علاقات طويلة الأمد مع التجار والشركاء، وتقديم حلول نقل موثوقة تدعم استقرار الأعمال
+          وتسهّل حركة التجارة داخل السوق الفلسطيني.
+        </p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        <div class="col-md-4 reveal">
+          <div class="card-soft">
+            <div class="icon-bubble"><i class="bi bi-clock-history"></i></div>
+            <h5>التزام بالمواعيد</h5>
+            <p>نحافظ على جداول تسليم دقيقة لتقليل التعطيل ودعم استمرار أعمالك.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="card-soft">
+            <div class="icon-bubble"><i class="bi bi-shield-check"></i></div>
+            <h5>مصداقية وسلامة</h5>
+            <p>نهتم بسلامة الشحنات ومعايير نقل موثوقة لضمان وصول البضائع بحالة ممتازة.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="card-soft">
+            <div class="icon-bubble"><i class="bi bi-people"></i></div>
+            <h5>شراكات طويلة</h5>
+            <p>نبني علاقات مستمرة مع التجار والشركاء عبر خدمة احترافية ودعم دائم.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (Dark band like screenshot) -->
+  <section id="services" class="dark-band">
+    <div class="container position-relative">
+      <div class="text-center reveal">
+        <h2 class="section-title">خدماتنا</h2>
+        <p class="section-sub mx-auto">
+          نقدم خدمات نقل تجاري متكاملة + استثمار في المواد التموينية الأساسية لدعم السوق المحلي.
+        </p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        <div class="col-lg-6 reveal">
+          <div class="card-soft h-100">
+            <div class="icon-bubble"><i class="bi bi-truck"></i></div>
+            <h5>النقل التجاري</h5>
+            <p>
+              نقدّم خدمات نقل تجاري متكاملة تشمل نقل البضائع من الموانئ إلى التجار في مختلف مناطق الضفة الغربية،
+              مع الحرص على سلامة الشحنات والالتزام بمواعيد التسليم، وتوفير حلول نقل عملية تناسب احتياجات التجار.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="card-soft h-100">
+            <div class="icon-bubble"><i class="bi bi-basket2"></i></div>
+            <h5>الاستثمار في المواد التموينية</h5>
+            <p class="mb-3">
+              تعمل الشركة في مجال الاستثمار في المواد التموينية الأساسية بهدف دعم السوق المحلي وتوفير منتجات بجودة عالية وبشكل مستقر.
+            </p>
+            <div class="row g-2">
+              <div class="col-6"><span class="badge text-bg-light border w-100 py-2">السكر</span></div>
+              <div class="col-6"><span class="badge text-bg-light border w-100 py-2">الطحين</span></div>
+              <div class="col-6"><span class="badge text-bg-light border w-100 py-2">الزيت</span></div>
+              <div class="col-6"><span class="badge text-bg-light border w-100 py-2">الأرز</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section id="areas">
+    <div class="container">
+      <div class="text-center reveal">
+        <h2 class="section-title">مناطق العمل</h2>
+        <p class="section-sub mx-auto">
+          نغطّي جميع محافظات الضفة الغربية، ونقدّم خدماتنا للتجار بكل التزام وموثوقية.
+        </p>
+      </div>
+
+      <div class="row g-4 mt-2">
+        <div class="col-lg-4 reveal">
+          <div class="card-soft h-100">
+            <div class="icon-bubble"><i class="bi bi-geo-alt"></i></div>
+            <h5>الضفة الغربية</h5>
+            <p>تغطية شاملة للمحافظات لتسهيل حركة التجارة وخدمة التجار بشكل سريع ومنتظم.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 reveal">
+          <div class="card-soft h-100">
+            <div class="icon-bubble"><i class="bi bi-box-seam"></i></div>
+            <h5>حلول مناسبة للتجار</h5>
+            <p>مرونة في التعامل وتخطيط النقل بما يناسب طبيعة البضائع واحتياجات كل تاجر.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 reveal">
+          <div class="card-soft h-100">
+            <div class="icon-bubble"><i class="bi bi-check2-circle"></i></div>
+            <h5>جودة واستقرار</h5>
+            <p>تركيز على جودة الخدمة واستقرار التوريد لبناء ثقة طويلة الأمد مع الشركاء.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="d-flex flex-wrap gap-3 align-items-center justify-content-between">
+        <div class="fw-bold">
+          © <span id="year"></span> شركة أبناء صلاح عاشور للنقل والإستثمار
+        </div>
+        <div class="d-flex gap-3">
+          <a href="https://www.facebook.com/share/1GN5d3y6z6/?mibextid=wwXIfr" target="_blank" rel="noopener">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://wa.me/972598337548" target="_blank" rel="noopener">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="mailto:SonsofSalahAshour@gmail.com">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" href="https://wa.me/972598337548" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scroll
+    document.querySelectorAll('a.nav-link[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(!el) return;
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+        // close navbar on mobile
+        const nav = document.getElementById('nav');
+        if(nav.classList.contains('show')) new bootstrap.Collapse(nav).toggle();
+      });
+    });
+
+    // reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    revealEls.forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
