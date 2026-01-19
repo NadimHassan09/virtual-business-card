@@ -154,6 +154,34 @@
       text-align: right;
     }
 
+    /* Hero title animation */
+    .hero-anim{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end; /* RTL: right aligned on desktop */
+    }
+
+    .hero-line{
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(16px);
+      filter: blur(2px);
+      animation: heroLineIn .85s cubic-bezier(.2,.9,.2,1) forwards;
+      will-change: transform, opacity, filter;
+    }
+
+    .hero-line.delay-1{ animation-delay: .10s; }
+    .hero-line.delay-2{ animation-delay: .28s; }
+
+    @keyframes heroLineIn{
+      to{
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
     .hero-phone-wrapper{
       flex: 1 1 50%;
       display: flex;
@@ -167,12 +195,19 @@
       max-width: 90%;
       aspect-ratio: 9 / 19.5;
       background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-      border-radius: 36px;
+      border-radius: 40px;
       padding: 12px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.4), 
+      box-shadow: 0 24px 70px rgba(0,0,0,.35), 
+                  0 8px 25px rgba(0,0,0,.2),
                   0 0 0 8px #1a1a1a,
                   0 0 0 12px rgba(255,255,255,.1);
       position: relative;
+      transform: perspective(900px) rotateY(-8deg) rotateX(4deg);
+      transition: transform .25s ease;
+    }
+
+    .phone-frame:hover{
+      transform: perspective(900px) rotateY(-4deg) rotateX(2deg);
     }
 
     .phone-frame::before{
@@ -407,6 +442,7 @@
       .hero-title{
         text-align: center;
       }
+      .hero-anim{ align-items: center; }
       .hero-phone-wrapper{
         justify-content: center;
       }
@@ -478,8 +514,9 @@
     <div class="container position-relative">
       <div class="hero-content reveal">
         <div class="hero-title-wrapper">
-          <h1 class="hero-title">
-            شركة أبناء صلاح عاشور للنقل والاستثمار
+          <h1 class="hero-title hero-anim" aria-label="شركة أبناء صلاح عاشور للنقل والاستثمار">
+            <span class="hero-line delay-1">شركة أبناء صلاح عاشور</span>
+            <span class="hero-line delay-2">للنقل والاستثمار</span>
           </h1>
         </div>
 
