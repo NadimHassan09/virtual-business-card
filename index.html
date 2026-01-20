@@ -176,6 +176,39 @@
       z-index: 2;
     }
 
+    /* Hero watermark logo badge */
+    .hero-logo-badge{
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      width: 200px;
+      height: 200px;
+      padding: 0;
+      background: transparent;
+      backdrop-filter: none;
+      border-radius: 0;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.7;
+      transition: opacity .3s ease, transform .3s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-logo-badge img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,.2));
+    }
+
+    .hero-logo-badge:hover{
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+
     .hero-content{
       display: flex;
       flex-direction: row;
@@ -220,6 +253,15 @@
 
     .hero-line.delay-1{ animation-delay: .10s; }
     .hero-line.delay-2{ animation-delay: .28s; }
+    .hero-line.delay-3{ animation-delay: .46s; }
+
+    /* English company name styling */
+    .hero-en{
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      font-weight: 600;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
 
     @keyframes heroLineIn{
       to{
@@ -532,6 +574,13 @@
         justify-content: center;
       }
       .phone-frame{ width: 240px; }
+      .hero-logo-badge{
+        bottom: 20px;
+        right: 20px;
+        width: 160px;
+        height: 160px;
+        padding: 0;
+      }
       section{ padding: 64px 0; }
     }
   </style>
@@ -593,11 +642,16 @@
   <!-- HERO -->
   <header id="top" class="hero-wrap">
     <div class="container position-relative">
+      <!-- Hero watermark logo badge -->
+      <div class="hero-logo-badge">
+        <img src="assets/company-logo.png" alt="Company Logo">
+      </div>
       <div class="hero-content reveal">
         <div class="hero-title-wrapper">
           <h1 class="hero-title hero-anim" aria-label="شركة أبناء صلاح عاشور للنقل والاستثمار">
             <span class="hero-line delay-1">شركة أبناء صلاح عاشور</span>
             <span class="hero-line delay-2">للنقل والاستثمار</span>
+            <span class="hero-line hero-en delay-3">Son's Of Salah Ashour Transport & Investment Co.</span>
           </h1>
         </div>
 
