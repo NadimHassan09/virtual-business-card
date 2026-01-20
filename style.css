@@ -616,11 +616,7 @@ footer a:hover{ color: #fff; text-decoration: underline; }
   }
   .phone-frame{ width: 240px; }
   .hero-logo-badge{
-    bottom: 20px;
-    right: 20px;
-    width: 160px;
-    height: 160px;
-    padding: 0;
+    display: none; /* Hide hero logo on medium and smaller screens */
   }
   section{ padding: 64px 0; }
 }
