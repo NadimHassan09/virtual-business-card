@@ -242,6 +242,11 @@
       align-items: flex-end; /* RTL: right aligned on desktop */
     }
 
+    /* English line should align correctly on RTL page */
+    .hero-anim .hero-en{
+      align-self: flex-end;
+    }
+
     .hero-line{
       display: inline-block;
       opacity: 0;
@@ -261,6 +266,8 @@
       font-weight: 600;
       opacity: 0.9;
       margin-top: 4px;
+      direction: ltr;
+      text-align: left;
     }
 
     @keyframes heroLineIn{
@@ -342,11 +349,11 @@
     }
 
     .phone-qr-container{
-      flex: 1;
+      flex: 0 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
       background: linear-gradient(135deg, #f8f9fa, #ffffff);
     }
 
@@ -387,6 +394,76 @@
       font-weight: 700;
       color: var(--muted);
       z-index: 1;
+    }
+
+    .phone-info{
+      padding: 14px 16px 18px;
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,.06);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .phone-info-title{
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .phone-info-sub{
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .phone-info-cta{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      color: #fff;
+      background: var(--green);
+      box-shadow: 0 10px 22px var(--ring);
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .phone-info-cta:hover{
+      transform: translateY(-1px);
+      filter: brightness(.98);
+    }
+
+    .phone-chips{
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .phone-chip{
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 11px;
+      color: var(--text-2);
+      background: rgba(2,132,199,.06);
+      border: 1px solid rgba(2,132,199,.14);
+    }
+
+    .phone-chip i{
+      font-size: 12px;
+      color: var(--icon);
     }
 
     .phone-home-indicator{
@@ -670,6 +747,26 @@
                 <div class="phone-qr-placeholder">
                   <i class="bi bi-qr-code"></i>
                   <span class="qr-label">QR Code</span>
+                </div>
+              </div>
+              <div class="phone-info">
+                <div class="phone-info-title">Son's Of Salah Ashour</div>
+                <div class="phone-info-sub">Transport & Investment Co.</div>
+
+                <a class="phone-info-cta" href="https://wa.me/972598337548" target="_blank" rel="noopener">
+                  <i class="bi bi-whatsapp"></i>
+                  تواصل واتساب
+                </a>
+
+                <div class="phone-chips">
+                  <a class="phone-chip" href="https://www.facebook.com/share/1GN5d3y6z6/?mibextid=wwXIfr" target="_blank" rel="noopener">
+                    <i class="bi bi-facebook"></i>
+                    Facebook
+                  </a>
+                  <a class="phone-chip" href="mailto:SonsofSalahAshour@gmail.com">
+                    <i class="bi bi-envelope"></i>
+                    Email
+                  </a>
                 </div>
               </div>
               <div class="phone-home-indicator"></div>
